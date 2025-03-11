@@ -132,7 +132,7 @@
     <div id="controls">
       <button onclick="clearMarkers()">Clear Points</button>
       <button onclick="copyToClipboard()">Copy to Clipboard</button>
-      <button onclick="saveCoordinates()">Save Coordinates</button>
+      <!-- <button onclick="saveCoordinates()">Save Coordinates</button> -->
       <input
         type="color"
         id="colorPicker"
@@ -231,21 +231,21 @@
         });
       }
 
-      function saveCoordinates() {
-        if (coordinates.length === 0) {
-          alert("No coordinates to save!");
-          return;
-        }
-        const blob = new Blob([JSON.stringify(coordinates)], {
-          type: "application/json",
-        });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "coordinates.json";
-        a.click();
-        URL.revokeObjectURL(url);
-      }
+      // function saveCoordinates() {
+      //   if (coordinates.length === 0) {
+      //     alert("No coordinates to save!");
+      //     return;
+      //   }
+      //   const blob = new Blob([JSON.stringify(coordinates)], {
+      //     type: "application/json",
+      //   });
+      //   const url = URL.createObjectURL(blob);
+      //   const a = document.createElement("a");
+      //   a.href = url;
+      //   a.download = "coordinates.json";
+      //   a.click();
+      //   URL.revokeObjectURL(url);
+      // }
     </script>
   </body>
 </html>
